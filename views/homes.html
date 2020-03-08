@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Homes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+<include href="./php/nav.php"/>
+<div class="container">
+    <h1>Houses</h1>
+    <input type="checkbox" name="type" id="house"><label for="house">House</label>
+    <input type="checkbox" name="type" id="apartment"><label for="apartment">Apartment</label>
+    <input type="checkbox" name="type" id="condo"><label for="condo">Condo</label>
+    <div class="row">
+        <repeat group="{{ @properties }}" value="{{ @property }}">
+            <div class="card col-3">
+                <h3 class=card-title">{{ @property['type']}} #{{ @property['prop_id'] }}</h3>
+                <img src="" alt="dummyImage">
+                <button type="button" class="btn btn-dark" data-toggle="modal"
+                        data-target="#modal{{ @property['prop_id'] }}">
+                    More Info
+                </button>
+                <div class="modal fade" id="modal{{ @property['prop_id'] }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">House Info</h5>
+                                <button type="button" class="close btn-dark" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <check if="{{ @property['type'] }} == house">
+                                        <li>Rent or purchase: {{ @property['rent'] }}</li>
+                                    </check>
+                                    <check if="{{ @property['type'] }} != house">
+                                        <li>Floor #: {{ @property['floor_level'] }}</li>
+                                    </check>
+                                    <li>Square Footage: {{ @property['sq_foot'] }}</li>
+                                    <li># of Bedrooms: {{ @property['bed_count'] }}</li>
+                                    <li># of Bathrooms {{ @property['bath_count'] }}</li>
+                                    <li>Description: {{ @property['description'] }}</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </repeat>
+    </div>
+    <div class="text-center">
+<!--        TODO: make only viewable for admin-->
+        <a href="add">
+            <button class="btn btn-primary">Add a New Home!</button>
+        </a>
+    </div>
+</div>
+<script src="/305/bootstrap-tutorial/js/jquery.slim.min.js"></script>
+<script src="/305/bootstrap-tutorial/js/popper.min.js"></script>
+<script src="/305/bootstrap-tutorial/js/bootstrap.min.js"></script>
+
+</body>
+</html>
