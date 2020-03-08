@@ -1,2 +1,3 @@
 # propertysearch
-Backup of propertysearch project
+Backup of propertysearch project  
+IT328 group project (two people)
