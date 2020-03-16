@@ -28,7 +28,7 @@
                             <!-- Buyer radio -->
                             <div class="custom-control custom-radio custom-control-inline mr-5">
                                 <input type="radio" class="custom-control-input" id="buyer" name="admin" value="0"
-                                       checked>
+                                                                                                            checked>
                                 <label class="custom-control-label" for="buyer">Buyer</label>
                             </div>
                             <!-- Agent radio -->
@@ -43,28 +43,28 @@
                         </check>
                         <input type="text" id="fname" name="fname" class="col-sm-8 offset-sm-2 form-control
                                                                           form-control-lg input-group mb-4"
-                               placeholder="First">
+                                                                            placeholder="First">
 
                         <check if="{{ @errors['lname'] }}">
                             <span class="offset-sm-2 text-danger">{{ @errors['lname'] }}</span>
                         </check>
                         <input type="text" id="lname" name="lname" class="col-sm-8 offset-sm-2 form-control
                                                                           form-control-lg input-group mb-4"
-                               placeholder="Last">
+                                                                            placeholder="Last">
 
                         <check if="{{ @errors['email'] }}">
                             <span class="offset-sm-2 text-danger">{{ @errors['email'] }}</span>
                         </check>
                         <input type="email" id="email" name="email" class="col-sm-8 offset-sm-2 form-control
                                                                            form-control-lg input-group mb-4"
-                               placeholder="Email">
+                                                                            placeholder="Email">
 
                         <check if="{{ @errors['password'] }}">
                             <span class="offset-sm-2 text-danger">{{ @errors['password'] }}</span>
                         </check>
                         <input type="password" id="password" name="password" class="col-sm-8 offset-sm-2 form-control
                                                                                     form-control-lg input-group mb-4"
-                               placeholder="Password">
+                                                                                    placeholder="Password">
 
                         <check if="{{ @errors['password'] }}">
                             <false>
@@ -76,14 +76,14 @@
                         <input type="password" id="passRepeat" name="passRepeat" class="col-sm-8 offset-sm-2
                                                                                         form-control form-control-lg
                                                                                         input-group mb-4"
-                               placeholder="Repeat password">
+                                                                                        placeholder="Repeat password">
 
                         <check if="{{ @errors['phone'] }}">
                             <span class="offset-sm-2 text-danger">{{ @errors['phone'] }}</span>
                         </check>
                         <input type="tel" id="phone" name="phone" class="col-sm-8 offset-sm-2 form-control
                                                                          form-control-lg input-group"
-                               placeholder="Phone">
+                                                                            placeholder="Phone">
                     </div>
 
                     <div class="text-center">
